@@ -1,0 +1,128 @@
+* { 
+    box-sizing: border-box;
+    margin: 0; 
+}
+
+body {
+    font-family: "Karla", Arial, Helvetica;
+    font-size: 16px;
+    background-color: hsl(204, 43%, 93%);
+}
+
+p {
+    color: #FFF;
+}
+
+/* layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas: 
+    "description description"
+    "subscription features";
+    max-width: 620px;
+    margin: 200px auto 200px auto;
+    z-index: 1;
+}
+
+/* Top Section */
+.description { 
+    grid-area: description;
+    background-color: #FFF;
+    border-radius: 10px 10px 0 0;
+    padding: 2em;
+}
+
+.description h1 {
+    color: hsl(179, 62%, 43%);
+    font-size: 1.5rem;
+}
+
+.trial-statement {
+    color: hsl(71, 73%, 54%);
+    margin: 1em auto 0 auto;
+    font-size: 1.125rem;
+}
+
+.description-sentence {
+    color: hsl(218, 22%, 67%);
+    margin: 1em auto 0 auto;
+    line-height: 1.5;
+}
+
+/* Bottom Section */
+.heading-title {
+    color: #FFF;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subscription { 
+    grid-area: subscription;
+    background-color: hsl(179, 62%, 43%);
+    border-radius: 0 0 0 10px;
+    padding: 2em;
+    line-height: 1.5;
+}
+
+.price {
+    color: #FFF;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.frenquency {
+    display: inline-block;
+    margin-left: .5em;
+    color: hsla(0, 0%, 100%, 0.6);
+}
+
+.cta {
+    background-color: hsl(71, 73%, 54%);
+    border-style: none;
+    color: #FFF;
+    font-weight: bold;
+    padding: 16px 6rem;
+    border-radius: 5px;
+    margin-top: 1.5em;
+    box-shadow: 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.cta:hover {
+    cursor: pointer;
+}
+
+.features { 
+    grid-area: features;
+    background-color: hsl(179, 47.2%, 51.8%);
+    border-radius: 0 0 10px 0;
+    padding: 2em;
+}
+
+.feature-items {
+    color: hsla(0, 0%, 100%, 0.6);
+}
+
+@media (max-width: 625px){
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 0px 0px;
+        grid-template-areas: 
+        "description"
+        "subscription"
+        "features";
+        max-height: max-content;
+        max-width: 320px;
+    }
+
+    .subscription {
+        border-bottom-left-radius: 0;
+    }
+
+    .features {
+        border-bottom-left-radius: 10px;
+    }
+}
